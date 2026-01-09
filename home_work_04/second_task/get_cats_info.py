@@ -1,8 +1,7 @@
 import pathlib
 
-cats_info_path = pathlib.Path(__file__).parent / 'cats_info.txt'
-
 def get_cats_info(cats_info):
+    cats_info = pathlib.Path(cats_info)
     list_dict_cats = []
     try:
         with open(cats_info, 'r', encoding='utf-8') as file:
@@ -29,5 +28,5 @@ def get_cats_info(cats_info):
 
     return list_dict_cats
 
-cats_info = get_cats_info(cats_info_path)
+cats_info = get_cats_info('home_work_04/second_task/cats_info.txt')
 print(*cats_info,sep='\n')

@@ -1,11 +1,8 @@
 import pathlib
 
 
-workers_info_path = pathlib.Path(__file__).parent / 'workers_info.txt'
-
-
-
 def total_salary(workers_data):
+    workers_data = pathlib.Path(workers_data)
     total_salary_num = 0
     valid_workers = 0
     try:
@@ -35,7 +32,7 @@ def total_salary(workers_data):
 
     return total_salary_num, avg_salary
 
-total, avarage = total_salary(workers_info_path)
+total, avarage = total_salary('home_work_04/first_task/workers_info.txt')
 print(f'Загальний дохід: {total}\n'
       f'Середня заробітна плата: {avarage}')
     
